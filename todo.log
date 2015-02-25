@@ -1,0 +1,64 @@
+Views:
+
+- Feed
+- Brand
+- Product
+
+25.02.2015
+
+1. Feed View Specicfication:
+1.1 I should be able to see all feeditems from all brands as default
+1.2 I should be able to see user specific feed based on id or name
+1.3 I should be able to filter feeditems based on date
+1.4 I should be able to filter feeditems based on brand
+1.5 I should be able to filter feeditems based on spider
+1.6 I should be able to filter feeditems based on user
+1.7 I should be able to filter feeditems based on board type
+1.8 I should be able to delete feeditems
+1.9 I should be able to go to a brand by clicking on the brand logo
+1.10 I should be able to go to a user by clicking on the profile image
+1.11 I should be able to go to a product by clicking on a product
+1.12 I want to see a timeline of feeditems which can be grouped on type, brand, user or spider + count
+
+2. Brand View Specification:
+2.1 I should be able to see all brands
+2.2 I should be able to filter brands based on name
+2.3 I should be able to filter brands based on spider
+2.4 I should be able to group brands based on spider
+2.5 I should be able to see disabled brands
+2.6 I should be able to go to the products of a brand by clicking on the brand
+2.7 I want to see how many active / disabled products a brand has
+2.8 I want to see how many in stock / out of stock products a brand has
+
+3. Product View Specification
+3.1 I should be able to search for products based on name
+3.2 I should be able to search for products based on id
+3.3 I should be able to filter products based on brand
+3.4 I should be able to filter products based on spider
+
+Setup:
+x Create toolbar with links to feed, brand and product view
+x Setup api to fetch all feeditems from brands + user specific feed (required for first version)
+x Setup api to fetch all brands + filter based on name (required for second version and fifth version)
+x Setup api to fetch all products + search and filters (required for third version)
+
+First version:
+x create a feed view which lists all feed items as default + possibility to see user specific feed (1.1, 1.2)
+
+Second version:
+create a brand view which lists all brands and possibility to filter brands based on name (2.1, 2.2)
+
+Third version:
+create a product view which lists all products and possibility to search for products based on name/id and filter based on brand / spider (3.1-3.4)
+
+Fourth version:
+link all pages together (1.9-1.11, 2.6)
+
+Fifth version:
+create filters / group by for brand view (2.3-2.4)
+
+Sixth version:
+add scrolling to feed, brand and product view
+
+Seventh version:
+remember search when refreshing + possibility to share link to specific search for feed, brand and product view

@@ -1,0 +1,32 @@
+<h1>{{brand.title}}</h1>
+
+<div layout="row">
+    <div layout="column">
+        <h1>{{feed.title}}</h1>
+    </div>
+    <div layout="column">
+        <md-input-container>
+            <label>User id</label>
+            <input type="text" ng-model="feed.userId">
+        </md-input-container>
+    </div>
+    <div layout="column">
+        <md-progress-circular class="md-hue-2" md-mode="indeterminate" ng-show="feed.loading"></md-progress-circular>
+        <md-button class="md-fab" aria-label="Search" ng-hide="feed.loading">
+            <i class="fa fa-search"></i>
+        </md-button>
+    </div>
+</div>
+<md-list>
+    <md-item ng-repeat="item in brand.data.items">
+        <md-item-content>
+            <div class="md-tile-left">
+                <img style="max-width: 90px" ng-src="{{item.image || 'http://lh3.ggpht.com/1Cwuu7ZK9R1sxO1aduJWDPV6hJFZCrtreCAb7VepOJJelJuVzESuOyI6YBulwyPhdU1MVWKb3Px0rDhfA2FWn_MZ5g=s90'}}" class="face" alt="{{item.header.actor.name}}">
+            </div>
+            <div class="md-tile-content">
+                <h3>{{item.name}}</h3>
+            </div>
+        </md-item-content>
+        <md-divider ng-if="!$last" class="ng-scope md-default-theme"></md-divider>
+    </md-item>
+</md-list>

@@ -1,0 +1,55 @@
+<div layout="row">
+    <div layout="column">
+        <h1>{{feed.title}}</h1>
+    </div>
+    <div layout="column">
+        <md-input-container>
+            <label>User id</label>
+            <input type="text" ng-model="feed.userId">
+        </md-input-container>
+    </div>
+    <div layout="column">
+        <md-progress-circular class="md-hue-2" md-mode="indeterminate" ng-show="feed.loading"></md-progress-circular>
+        <md-button class="md-fab" aria-label="Search" ng-hide="feed.loading">
+            <i class="fa fa-search"></i>
+        </md-button>
+    </div>
+</div>
+<md-list>
+    <md-item ng-repeat="item in feed.data.items">
+        <md-item-content>
+            <div class="md-tile-left">
+                <img ng-src="{{item.header.actor.image || 'http://lh3.ggpht.com/1Cwuu7ZK9R1sxO1aduJWDPV6hJFZCrtreCAb7VepOJJelJuVzESuOyI6YBulwyPhdU1MVWKb3Px0rDhfA2FWn_MZ5g=s90'}}" class="face" alt="{{item.header.actor.name}}">
+            </div>
+            <div class="md-tile-content">
+                <h3>{{item.header.actor.name}}</h3>
+                <h4>{{item.header.title}}</h4>
+            </div>
+        </md-item-content>
+        <md-divider class="ng-scope md-default-theme"></md-divider>
+        <div layout="row">
+            <div layout="column" flex ng-repeat="product in item.body.products">
+                <img width="100%" height="auto" style="max-width: 100px;" ng-src="{{product.image}}">
+            </div>
+        </div>
+        <md-divider class="ng-scope md-default-theme"></md-divider>
+        <i class="fa fa-heart" style="color: red;"></i>
+        {{item.footer.loves.count}}
+        <i class="fa fa-comment-o"></i>
+        {{item.footer.comments.count}}
+        <md-list>
+            <md-item ng-repeat="comment in item.footer.comments.comments">
+                <md-item-content>
+                    <div class="md-tile-left">
+                        <img ng-src="{{comment.actor.image}}" class="face" alt="img of person">
+                    </div>
+                    <div class="md-tile-content">
+                        <h3>{{comment.actor.name}}</h3>
+                        <h4>{{comment.comment}}</h4>
+                    </div>
+                </md-item-content>
+            </md-item>
+        </md-list>
+        <md-divider ng-if="!$last" class="ng-scope md-default-theme"></md-divider>
+    </md-item>
+</md-list>
