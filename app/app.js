@@ -5,7 +5,6 @@ angular.module('sobazaar', [
   'sobazaar.sofeed',
   'sobazaar.sobrand',
     'sobazaar.soproduct',
-  'myApp.version',
     'ngMaterial'
 ]).
 config([function() {
